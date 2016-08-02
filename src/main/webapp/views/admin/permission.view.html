@@ -1,0 +1,197 @@
+<h3>Permission</h3>
+
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+   <datasource  name="Permission" entity="api/rest/security/Permission" keys="id" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="Permission.startInserting()" ng-hide="Permission.inserting || Permission.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-Permission"> 
+  <div crn-datasource="Permission" class="" ng-hide="Permission.editing || Permission.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div class="">response</div>
+          </th> 
+          <th class=""> 
+            <div class="">path</div>
+          </th> 
+          <th class=""> 
+            <div class="">verb</div>
+          </th> 
+          <th class=""> 
+            <div class="">priority</div>
+          </th> 
+          <th class=""> 
+            <div class="">exclude</div>
+          </th> 
+          <th class=""> 
+            <div class="">enabled</div>
+          </th> 
+          <th class=""> 
+            <div class="">role</div>
+          </th> 
+          <th class=""> 
+          <div class="">{{"template.crud.actions" | translate}}</div>
+          </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.response}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.path}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.verb}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.priority}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.exclude}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                  {{rowData.enabled}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class="">
+
+                {{rowData.role.name}}
+        
+            </div>
+          </td> 
+          <td class=""> 
+            <div class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button> 
+    </div> 
+  </div> 
+</div> 
+<div class=""></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-Permission"> 
+  <div class="form" ng-show="Permission.editing || Permission.inserting"> 
+    <form crn-datasource="Permission" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-response"> 
+          <div class="form-group"> 
+            <label for="textinput-response" class="">response</label> 
+
+        <input type="number" ng-model="Permission.active.response" class="form-control" id="textinput-response" placeholder="response" > 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-path"> 
+          <div class="form-group"> 
+            <label for="textinput-path" class="">path</label> 
+
+        <input type="text" ng-model="Permission.active.path" class="form-control" id="textinput-path" placeholder="path"  required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-verb"> 
+          <div class="form-group"> 
+            <label for="textinput-verb" class="">verb</label> 
+
+        <input type="text" ng-model="Permission.active.verb" class="form-control" id="textinput-verb" placeholder="verb"  required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-priority"> 
+          <div class="form-group"> 
+            <label for="textinput-priority" class="">priority</label> 
+
+        <input type="number" ng-model="Permission.active.priority" class="form-control" id="textinput-priority" placeholder="priority" required="required"> 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-exclude"> 
+          <div class="form-group"> 
+            <label for="textinput-exclude" class="">exclude</label> 
+
+        <input type="text" ng-model="Permission.active.exclude" class="form-control" id="textinput-exclude" placeholder="exclude"  > 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-enabled"> 
+          <div class="form-group"> 
+            <label for="textinput-enabled" class="">enabled</label> 
+
+        <input type="checkbox" ng-model="Permission.active.enabled"  id="textinput-enabled" placeholder="enabled" > 
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-role"> 
+          <div class="form-group"> 
+            <label for="textinput-role" class="">role</label> 
+
+
+    <datasource name="Role" entity="api/rest/security/Role" keys="id" class=""></datasource> 
+
+    <select ng-model="Permission.active.role" class="form-control" id="textinput-role" ng-options="opt as opt.name for opt in Role.data track by opt.id" >
+      <option value=''>None</option>
+    </select>
+
+
+          </div> 
+        </div> 
+        <div class=""></div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<div class=""></div>

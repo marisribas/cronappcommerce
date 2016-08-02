@@ -1,0 +1,101 @@
+<div class="component-holder ng-binding ng-scope" data-component="crn-sidebar" id="crn-sidebar-751554"> 
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                <div class="col-xs-2 col-center-block" style="margin-bottom:5%">
+                    <a class="navbar-brand" href="javascript:void(0);"><img src="views/cronoscommerce/images/logo.png" class="" width="211" height="122"> </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="component-holder" data-component="crn-sidebar-item">
+                        <a href="#/home" class="">
+                            <i class="fa fa-lg fa-home"></i> 
+                            <span class="">{{"Home.view.Home" | translate}}</span>
+                        </a>
+                    </li>
+                    <li class="component-holder" data-component="crn-sidebar-item">
+                        <a href="#/home/admin/category" class="">
+                            <i class="fa fa-lg fa-home"></i> 
+                            <span class="">{{'Home.view.Categoria' | translate}}</span>
+                        </a>
+                    </li>
+                    <li class="component-holder" data-component="crn-sidebar-item">
+                        <a href="#/home/admin/subcategory" class="">
+                            <i class="fa fa-lg fa-home"></i> 
+                            <span class="">{{'Home.view.SubCategoria' | translate}}</span>
+                        </a>
+                    </li>
+                    <li class="component-holder" data-component="crn-sidebar-item">
+                        <a href="#/home/admin/product" class="">
+                            <i class="fa fa-lg fa-home"></i> 
+                            <span class="">{{'Home.view.Produto' | translate}}</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-users fa-lg"></i> 
+                            <span class="">{{"Home.view.Admin" | translate}}</span>  
+                            <span class="caret"></span>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/home/admin/users" class="component-holder" data-component="crn-anchor">{{"Home.view.Users" | translate}}</a></li> 
+                                <li><a href="#/home/admin/roles" class="component-holder" data-component="crn-anchor">{{"Home.view.Roles" | translate}}</a></li> 
+                                <li><a href="#/home/admin/permission" class="component-holder" data-component="crn-anchor">{{"Home.view.Permission" | translate}}</a></li> 
+                                <li><a class="component-holder" data-toggle="modal" data-target="#modalPassword" data-component="crn-anchor">{{"Home.view.ChangePassword" | translate}}</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="component-holder" data-component="crn-sidebar-item"  ng-click="logout()">
+                        <a href="javascript:void(0);" class="">
+                            <i class="fa fa-sign-out"></i> 
+                            <span class="">{{"Home.view.Logout" | translate}}</span></a>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div ui-view="" class="container-fluid main-view"> 
+        Pagina inicial
+    </div> 
+</div> 
+<div class="modal fade" id="modalPassword"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title">{{"Home.view.ChangePassword" | translate}}</h4> 
+      </div> 
+      <div class="modal-body"> 
+        <form class="form-validation" autocomplete="off" name="form" role="form"> 
+          <div class="text-danger wrapper text-center" ng-show="authError"> 
+          </div> 
+          <div class="list-group list-group-sm"> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="oldPassword" placeholder="{{'Home.view.Old Password' | translate}}"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="newPassword" placeholder="{{'Home.view.New Password' | translate}}"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="newPasswordConfirmation" placeholder="{{'Home.view.Confirmation' | translate}}"> 
+            </div> 
+          </div> 
+        </form> 
+      </div> 
+      <div class="modal-footer"> 
+        <button class="btn btn-primary" type="submit" ng-click="changePassword()" ng-disabled="form.$invalid || vm.dataLoading">{{"Home.view.ChangePassword" | translate}}</button> 
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{'Home.view.Close' | translate}}</button> 
+      </div> 
+    </div> 
+  </div> 
+</div>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><Context>
+    <Resource accessToUnderlyingConnectionAllowed="true" driverClassName="org.h2.Driver" logAbandoned="true" name="jdbc/main" password="root" removeAbandoned="false" removeAbandonedTimeout="60" type="javax.sql.DataSource" url="jdbc:h2:file:~/fadc640cafff4942b5d363926c35295a;DATABASE_TO_UPPER=false;ALIAS_COLUMN_NAME=true;AUTO_SERVER=TRUE" username="root"/>
+    <Resource accessToUnderlyingConnectionAllowed="false" driverClassName="com.mysql.jdbc.Driver" logAbandoned="true" name="jdbc/CronosCommerce" password="techne" removeAbandoned="false" removeAbandonedTimeout="60" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/CronosCommerce?createDatabaseIfNotExist=true" username="root"/>
+</Context>

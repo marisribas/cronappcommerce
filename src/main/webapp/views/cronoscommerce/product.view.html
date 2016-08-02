@@ -1,0 +1,108 @@
+<div class="content">
+    <div class="single">
+    	<div class="container">
+    		<div class="single-grids">
+				<div class="col-md-4 single-grid1">
+					<h2>{{'Product.view.AcesseSuaConta' | translate}}</h2>
+					<ul>
+						<li><a href="#/login">login</a></li>
+						<li><a href="#/newRegister">{{'Product.view.NovoCadastro' | translate}}</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 single-grid">		
+    				<div class="flexslider">
+    					<ul class="slides">
+    						<li data-thumb="views/cronoscommerce/images/si.jpg">
+    							<div class="thumb-image"> <img src="views/cronoscommerce/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+							</li>
+							<li data-thumb="views/cronoscommerce/images/si1.jpg">
+    						    <div class="thumb-image"> <img src="views/cronoscommerce/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+							</li>
+							<li data-thumb="views/cronoscommerce/images/si2.jpg">
+						        <div class="thumb-image"> <img src="views/cronoscommerce/images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+							</li> 
+						</ul>
+					</div>
+				</div>	
+				<div class="col-md-4 single-grid simpleCart_shelfItem">		
+	    			<h3>Obey Wasted Years Camo Zip Bandeau Bikini Top</h3>
+					<p>Condition  New With the boom of the swimwear market, there are so many places providing swimming costumes that you may not know where to look first. If you want to facilitate your search, drop in at our one-stop store, and you’ll be able to equip yourself properly for water activities.</p>
+				
+					<div class="galry">
+						<div class="prices">
+							<h5 class="item_price">$95.00</h5>
+						</div>
+						<div class="rating">
+							<span>☆</span>
+							<span>☆</span>
+							<span>☆</span>
+							<span>☆</span>
+							<span>☆</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+						<p class="qty"> Qtd : </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+					<div class="btn_form">
+						<a href="#" class="add-cart item_add">{{'Product.view.AdicionarAoCarrinhoDeCompras' | translate}}</a>	
+					</div>
+					<div class="tag">
+						<p>Categoria : <a href="#"> Bikinis </a></p>
+						<p>Tag : <a href="#"> Lorem ipsum </a></p>
+					</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<div class="collpse">
+		<div class="container">
+		<div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true">
+		  <div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingOne">
+			  <h4 class="panel-title">
+				<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				  {{'Product.view.Descricao' | translate}}
+				</a>
+			  </h4>
+			</div>
+			<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+			  <div class="panel-body">
+				Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+</div>
+
+		<div class="related-products">
+			<div class="container">
+				<h3>Outros Produtos</h3>
+				<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+                   <datasource filter="{{query == '' || query == null ? null : ('/listByName/' + query)}}" name="Product" entity="api/rest/cronoscommerce/Product" keys="id" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+                </div>
+				<div class="product-model-sec single-product-grids"  crn-datasource="Product">
+					<div class="product-grid single-product" ng-repeat="product in datasource.data">
+						<a href="#/commerce/product?id={{product.id}}">
+    						<div class="more-product"><span> </span></div>						
+    						<div class="product-img b-link-stripe b-animate-go  thickbox">
+    							<img ng-src="{{product.image}}" class="img-responsive" alt="">
+    							<div class="b-wrapper">
+        							<h4 class="b-animate b-from-left  b-delay03">							
+        							    <button class="glyphicon glyphicon-eye-open"></button>
+        							</h4>
+    							</div>
+    						</div>
+						</a>					
+						<div class="product-info simpleCart_shelfItem">
+							<div class="product-info-cust prt_name">
+								<h4>{{product.name}}</h4>								
+								<span class="item_price">{{product.value}}</span>
+								<div class="clearfix"> </div>
+							</div>												
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>

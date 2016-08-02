@@ -1,0 +1,104 @@
+[
+ {
+  "_class": "cronoscommerce.entity.Category",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4611",
+  "name": "Homens",
+  "description": "Moda Masculina",
+  "image": "views/cronoscommerce/images/Moda-Masculina.png"
+ }, 
+  {
+  "_class": "cronoscommerce.entity.Category",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4612",
+  "name": "Mulheres",
+  "description": "Moda Feminina",
+  "image": "views/cronoscommerce/images/Moda-Feminina.png"
+ },
+  {
+  "_class": "cronoscommerce.entity.Category",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4613",
+  "name": "Pets",
+  "description": "Moda Pet",
+  "image": "views/cronoscommerce/images/cachorro-e-gato.png"
+ },
+ {
+  "_class": "cronoscommerce.entity.SubCategory",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4614",
+  "name": "Bermudas Masculinas",
+  "description": "Bermudas Masculinas",
+  "fk_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4611"
+ },
+ {
+  "_class": "cronoscommerce.entity.SubCategory",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4615",
+  "name": "Bermudas Femininas",
+  "description": "Bermudas Femininas",
+  "fk_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4612"
+ },
+ {
+  "_class": "cronoscommerce.entity.SubCategory",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4616",
+  "name": "Roupas para Cachorro",
+  "description": "Roupas para Cachorro",
+  "fk_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4613"
+ },
+ {
+  "_class": "cronoscommerce.entity.Product",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4617",
+  "name": "Bermuda Vermelha",
+  "description": "Bermuda Masculina Vermelha",
+  "value": "70,00",
+  "amount": "5",
+  "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4614",
+  "image":"views/cronoscommerce/images/bermuda_vermelha.jpg"
+ },
+ {
+  "_class": "cronoscommerce.entity.Product",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4618",
+  "name": "Bermuda Azul",
+  "description": "Bermuda Masculina Azul",
+  "value": "70,00",
+  "amount": "10",
+  "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4614",
+  "image":"views/cronoscommerce/images/bermuda_azul.jpg"
+ },
+ {
+  "_class": "cronoscommerce.entity.Product",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4619",
+  "name": "Bermuda Rosa",
+  "description": "Bermuda Feminina Rosa",
+  "value": "70,00",
+  "amount": "30",
+  "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4615",
+  "image":"views/cronoscommerce/images/bermuda_rosa.jpg"
+ },
+ {
+  "_class": "cronoscommerce.entity.Product",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4620",
+  "name": "Saia Amarela",
+  "description": "Saia Amarela",
+  "value": "50,00",
+  "amount": "30",
+  "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4615",
+  "image":"views/cronoscommerce/images/saia_amarela.jpg"
+ },
+ {
+  "_class": "cronoscommerce.entity.Product",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4621",
+  "name": "Roupinha do Flamengo",
+  "description": "Roupinha do Flamengo",
+  "value": "20,00",
+  "amount": "20",
+  "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4616",
+  "image":"views/cronoscommerce/images/roupinha_flamengo.jpg"
+ },
+ {
+  "_class": "cronoscommerce.entity.Product",
+  "id": "304BF43E-0E62-4F4A-8A63-3F22D7AD4622",
+  "name": "Roupinha do Mário",
+  "description": "Roupinha do Mário",
+  "value": "30,00",
+  "amount": "50",
+  "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4616",
+  "image":"views/cronoscommerce/images/roupinha_mario.png"
+ }
+]
