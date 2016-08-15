@@ -119,8 +119,6 @@ public class ProductREST {
       return new ResponseEntity<>(assembler.toResource(productBusiness.listById(id, pageable   )), HttpStatus.OK);    
   }
 
-
-
     /**
      * Serviço exposto para recuperar a entidade de acordo com o id fornecido
      * 

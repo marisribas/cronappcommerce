@@ -1,0 +1,37 @@
+<div class="content">
+    <div class="main-1">
+		<div class="container">
+            <div class="login-page">
+		        <div class="account_grid">
+			        <div class="col-md-6 login-left" ng-show="!logged">
+			  	        <h3>{{'Login.view.NovoCadastro' | translate}}</h3>
+				        <p>Ao criar uma conta na nossa loja, você será capaz de efetuar pagamentos mais rápido, além de armazenar seus endereços de entrega, ver e rastrear suas encomendas em sua conta e muito mais.</p>
+			            <a class="acount-btn" href="#/commerce/newClient">Criar nova conta</a>
+			        </div>
+			        <div class="col-md-6 login-right" ng-show="!logged">
+		  	            <h3>{{'Login.view.UsuariosCadastrados' | translate}}</h3>
+				        <p>Se você possui uma conta, por favor faça login.</p>
+				        <form>  
+			                <div>
+					            <span>{{'Login.view.Usuario' | translate}}<label>*</label></span>
+					            <input ng-model="user" type="text" id="user" name="user"> 
+				            </div>
+			                <div>
+					            <span>{{'Login.view.Senha' | translate}}<label>*</label></span>
+					            <input ng-model="password" style="width: 96%" type="password" id="password" name="password"> 
+			                </div>
+			                <a class="acount-btn" ng-click="logon();" href="#/commerce/login">Login</a>
+			            </form>
+			        </div>	
+			        
+			        <div class="col-md-12 text-center" ng-show="!logged">
+			            <h1>{{'Login.view.SejaBemVindoANossaLoja' | translate}}: <b>Cliente</b>!</h1>
+			            <br /><br />
+			            <a href="#/commerce/shoppingcart">{{'Login.view.RetornarAoCarrinhoDeCompras' | translate}}</a>
+			        </div>
+			        <div class="clearfix"> </div>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</div>

@@ -82,11 +82,19 @@ public class AuthenticationConfigurer implements AuthenticationProvider {
         .setRole(roleLogged).setPriority(1).setEnabled(true);
 
     Permission changePasswordLogged = new Permission();
-    changePasswordLogged.setPath("/changePassword").setVerb("POST")
+    changePasswordLogged.setPath("/api/rest/security/User/**").setVerb("POST")
         .setRole(roleLogged).setPriority(1).setEnabled(true);
-
-    Permission permissionLoggedRest = new Permission();
-    permissionLoggedRest.setPath("/api/rest/**").setVerb("ALL")
+        
+    Permission categoryGet = new Permission();
+    changePasswordLogged.setPath("/api/rest/cronoscommerce/Category/**").setVerb("GET")
+        .setRole(roleLogged).setPriority(1).setEnabled(true);
+        
+    Permission subCategoryGet = new Permission();
+    changePasswordLogged.setPath("/api/rest/cronoscommerce/SubCategory/**").setVerb("GET")
+        .setRole(roleLogged).setPriority(1).setEnabled(true);
+        
+    Permission productGet = new Permission();
+    changePasswordLogged.setPath("/api/rest/cronoscommerce/Product/**").setVerb("GET")
         .setRole(roleLogged).setPriority(1).setEnabled(true);
 
     UserRole userRoleAdmin = new UserRole();
@@ -102,9 +110,11 @@ public class AuthenticationConfigurer implements AuthenticationProvider {
     roleRepository.save(roleLogged);
     permissionRepository.save(permissionAdmin);
     permissionRepository.save(permissionLogged);
-    permissionRepository.save(changePasswordLogged);
+    // permissionRepository.save(changePasswordLogged);
     permissionRepository.save(permissionAdminRest);
-    permissionRepository.save(permissionLoggedRest);
+    // permissionRepository.save(categoryGet);
+    // permissionRepository.save(subCategoryGet);
+    // permissionRepository.save(productGet);
     userRoleRepository.save(userRoleAdmin);
   }
 

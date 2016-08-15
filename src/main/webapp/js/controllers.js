@@ -1,7 +1,19 @@
+window.safeApply = function(fn) {
+  var phase = this.$root.$$phase;
+  if(phase == '$apply' || phase == '$digest') {
+    if(fn && (typeof (fn) === 'function')) {
+      fn();
+    }
+  }
+  else {
+    this.$apply(fn);
+  }
+};
+
 (function ($app) {
     angular.module('custom.controllers', []);
 
-    app.controller('LoginController', ['$scope', '$http', '$location', '$rootScope', '$window', '$state', '$translate', 'Notification', function ($scope, $http, $location, $rootScope, $window, $state, $translate, Notification) {
+    app.controller('AdminController', ['$scope', '$http', '$location', '$rootScope', '$window', '$state', '$translate', 'Notification', function ($scope, $http, $location, $rootScope, $window, $state, $translate, Notification) {
 
         $scope.message = {};
 
@@ -63,7 +75,6 @@
         }
         
         $rootScope.logout = function logout() {
-
             $http({
                 method: 'GET',
                 url: 'logout',
@@ -82,19 +93,15 @@
             } else {
                 // It's not working with sessionStorage
             }
-            
-            $state.go("login");
+            $state.go("admin");
         }
-
 
         function handleError(error) {
             $rootScope.session.error = error;
         }
         
         $scope.changePassword = function () {
-
             var user = { oldPassword: oldPassword.value, newPassword: newPassword.value, newPasswordConfirmation: newPasswordConfirmation.value };
-
             $http({
                 method: 'POST',
                 url: 'changePassword',
@@ -136,52 +143,45 @@
         });
     }]);
     
-    app.controller('CommerceController', ['$scope', '$http', '$rootScope', '$state', '$translate', 'Notification', function ($scope, $http, $rootScope, $state, $translate, Notification) {
-        
-        $scope.message = {};
-        
-        function handleSuccess(data) {
-            if(typeof(Storage) !== "undefined") {
-              
-            } else {
-              
-            }
-        }
-
-        function handleError(error) {
-            $rootScope.session.error = error;
-        }
-        
-        $scope.$on('$viewContentLoaded', function(){
-          
-        });
-    }]);
-    
-    app.controller('ProductController', ['$scope', '$location', function ($scope, $location) {
-        
-        $scope.product = {};
-        
-        function handleSuccess(data) {
-            if(typeof(Storage) !== "undefined") {
-              
-            } else {
-              
-            }
-        }
-
-        function handleError(error) {
-            $rootScope.session.error = error;
-        }
-        
-        $scope.$on('$viewContentLoaded', function(){
-          
-        });
-    }]);
-    
     // General Commerce controller
-    app.controller('PageCommerceController', ['$scope', '$http', '$location', '$rootScope', '$window', '$state', '$translate', 'Notification', function ($scope, $http, $location, $rootScope, $window, $state, $translate, Notification) {
+    app.controller('PageCommerceController', ['$scope', '$http', '$location', '$rootScope', '$state', function ($scope, $http, $location, $rootScope, $state) {
       
       var service, id, test = $location.url().split('/commerce/')[1];
+      $scope.logged = false;
+      $scope.safeApply = safeApply;
+
+      $scope.emptyShoppingCart = function(){
+        $scope.products = [];
+        $rootScope.shoppingcart = [];
+        $rootScope.price = "0,00";
+      }
+      
+      $scope.register = function(){
+        var user = { email: $scope.User.email, name: $scope.User.name, login: $scope.User.login, password: $scope.User.password };
+        $http({
+            method: 'POST',
+            url: 'registerNewUser',
+            data: $.param(user),
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }).success(registerClientOk).error(registerClientNok);
+        
+        function registerClientOk() {
+          cleanRegisterFields();
+          $state.go('login');
+        }
+    
+        function registerClientNok() {
+          cleanRegisterFields();
+          var error = status >= 401 ? $translate.instant('Home.view.InvalidPassword') : data;
+          Notification.error(error);
+        }
+        
+        function cleanRegisterFields() {
+          $scope.User.email = "";
+          $scope.User.name = "";
+          $scope.User.password = "";
+        }
+      }
       
       updateScope(test);
           
@@ -203,7 +203,8 @@
           $rootScope.price += ',00';
         }
       }
-
+      
+      //configurando rotas de commerce
       function updateScope(test){
         if (typeof test !== 'undefined'){
           if (test.indexOf('?') != -1){
@@ -212,23 +213,22 @@
           } else {
             service = test;
           }
-          
+  
           switch(service){
             case 'product':
               $http({
-                  method: 'GET',
-                  url: '/api/rest/cronoscommerce/Product/listById/'+id,
-              }).then(handleSuccess, handleError);
-             
-              function handleSuccess(data) {
-                $scope.product = data;
-              }
-      
-              function handleError(error) {
-                $scope.product.error = error;
+                    method: 'GET',
+                    url: '/api/rest/cronoscommerce/Product/'+id,
+                }).then(handleSuccess, handleError);
+              
+              function handleSuccess(response) {
+                $scope.prod = response.data;
               }
               
-              break;
+              function handleError(error) {
+                $scope.prod.error = error;
+              }
+            break;
             case 'products':
               if (id){
                 $http({
@@ -255,9 +255,16 @@
                 $scope.products = $rootScope.shoppingcart;
               }
               break;
-            default:
-              $state.go('/home');
-              break;
+            case 'login':
+             $scope.logon = function(){
+                if ($scope.user == "cliente" && $scope.password == "123"){
+                  $scope.clientLogged = true;
+                } else{
+                  alert('usuario e senha invalido');
+                  $scope.clientLogged = false;
+                }
+              }
+              break;  
           }
         }
       }

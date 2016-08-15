@@ -1,4 +1,4 @@
-<h3>Product</h3>
+<h3>{{'Product.view.Produtos' | translate}}</h3>
 
 <div ng-hide="Product.inserting || Product.editing">
   <label for="textinput-filter" class="">{{"template.crud.search" | translate}}</label> 
@@ -10,7 +10,7 @@
    <datasource filter="{{query == '' || query == null ? null : ('/listByName/' + query)}}" name="Product" entity="api/rest/cronoscommerce/Product" keys="id" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
 </div> 
 <div class=""></div> 
-<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202" style="margin-bottom: 10px;"> 
   <button class="btn btn-primary" type="submit" onclick="" ng-click="Product.startInserting()" ng-hide="Product.inserting || Product.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
 </div> 
 <div class=""></div> 
@@ -187,12 +187,10 @@
         </div> 
         <div class=""></div> 
         <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-deliveryFee"> 
-          <div class="form-group"> 
-            <label for="textinput-deliveryFee" class="">Taxa de Entrega</label> 
-
-        <input type="text" ng-model="Product.active.deliveryFee" class="form-control" id="textinput-deliveryFee" placeholder="Taxa de Entrega"  required="required"> 
-
-          </div> 
+            <div class="form-group"> 
+                <label for="textinput-deliveryFee" class="">Taxa de Entrega</label> 
+                <input type="text" ng-model="Product.active.deliveryFee" class="form-control" id="textinput-deliveryFee" placeholder="Taxa de Entrega"  required="required"> 
+            </div> 
         </div> 
         <div class=""></div> 
       </fieldset> 

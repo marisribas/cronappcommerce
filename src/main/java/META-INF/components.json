@@ -112,7 +112,12 @@
             "dependent-by":{
                "removable":false,
                "global":true
-            }            
+            },
+            "on-after-fill":{
+               "removable":true,
+               "type":"event",
+               "global":true
+            }
          }
       },
       {

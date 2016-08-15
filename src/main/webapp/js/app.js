@@ -37,22 +37,21 @@ var app = (function() {
         
         // Set up the states
         $stateProvider
-          
-         .state('login', {
-            url: "/login",
-            controller: 'LoginController',
+         .state('admin', {
+            url: "/admin",
+            controller: 'AdminController',
             templateUrl: 'views/login.view.html'
           })
           
           .state('client', {
             url: "",
-            controller: 'PageCommerceController',
+            controller: 'PageController',
             templateUrl: 'views/cronoscommerce/home.view.html'
           })
           
           .state('main', {
             url: "/",
-            controller: 'CommerceController',
+            controller: 'PageController',
             templateUrl: 'views/cronoscommerce/home.view.html'
           })
           
@@ -69,16 +68,10 @@ var app = (function() {
                 return 'views/'+urlattr.name+'.view.html';
             }
           }) 
-        
-          .state('product', {
-            url: "/product/{id:.*}",
-            controller: 'ProductController',
-            templateUrl: 'views/cronoscommerce/product.view.html'
-          })
           
           .state('commerce', {
             url: "/commerce",
-            controller: 'CommerceController',
+            controller: 'PageController',
             templateUrl: 'views/cronoscommerce/home.view.html'
           })
 
@@ -87,9 +80,15 @@ var app = (function() {
             controller: 'PageCommerceController',
             cache: false, 
             templateUrl: function(urlattr){
-                return 'views/cronoscommerce/'+urlattr.name+'.view.html';
+              return 'views/cronoscommerce/'+urlattr.name+'.view.html';
             }
           }) 
+          
+         .state('registerNewUser', {
+            url: "/registerNewUser",
+            controller: 'PageCommerceController',
+            templateUrl: 'views/cronoscommerce/shoppingcart.view.html'
+         }) 
           
           .state('404', {
             url: "/error/404",

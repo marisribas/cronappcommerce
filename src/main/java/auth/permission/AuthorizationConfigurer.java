@@ -91,12 +91,24 @@ public class AuthorizationConfigurer extends WebSecurityConfigurerAdapter {
     String [] publics = {"/index.html", "/views/login.view.html", 
               "/public/**", "/plugins/**", "/components/**", "/js/**", 
               "/css/**", "/img/**", "/i18n/**", "/views/error/**", 
-              "/views/cronoscommerce/**", "/api/rest/cronoscommerce/Category/**", 
-              "/api/rest/cronoscommerce/SubCategory/**", "/api/rest/cronoscommerce/Product/**"};
+              "/views/cronoscommerce/**"
+    };
+    
+    String [] publicsPost = {
+      "/api/rest/security/User/**"
+    };
+    
+    String [] publicsGet = {
+      "/api/rest/cronoscommerce/Category/**", "/api/rest/cronoscommerce/SubCategory/**", 
+      "/api/rest/cronoscommerce/Product/**"
+    };
               
 		http.authorizeRequests().antMatchers(publics).permitAll();
-		
+		http.authorizeRequests().antMatchers(publicsPost).permitAll();
+		http.authorizeRequests().antMatchers(publicsGet).permitAll();
 		http.authorizeRequests().antMatchers(publics);
+		http.authorizeRequests().antMatchers(publicsPost);
+		http.authorizeRequests().antMatchers(publicsGet);
     
     List<Permission> permissions = permissionRepository.findAll();
     for(Permission p : permissions) {

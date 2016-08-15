@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="top-right">
 				<ul>
-					<li class="text"><a href="#/login">login</a></li>
+					<li class="text"><a href="#/commerce/login">login</a></li>
 					<li>
 						<div class="cart box_1">
 							<a href="#/commerce/shoppingcart">
@@ -38,7 +38,7 @@
 				        </button>
 				    </div>
 				    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
-                       <datasource filter="{{query == '' || query == null ? null : ('/list/' + query)}}" name="Category" entity="api/rest/cronoscommerce/Category" keys="id" rows-per-page="100" class=""></datasource> 
+                       <datasource name="Category" entity="api/rest/cronoscommerce/Category" keys="id" rows-per-page="100" class=""></datasource> 
                     </div> 
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				        <ul class="nav navbar-nav" crn-datasource="Category">
@@ -49,7 +49,7 @@
 					                <div class="row">
 						                <div class="col-sm-4">
 						                    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763287">
-                                                <datasource filter="{{query == '' || query == null ? null : ('/list/' + query)}}" name="SubCategory" entity="api/rest/cronoscommerce/SubCategory/listByCategory/{{category.id}}" keys="id" rows-per-page="100" class=""></datasource> 
+                                                <datasource name="SubCategory" entity="api/rest/cronoscommerce/SubCategory/listByCategory/{{category.id}}" keys="id" rows-per-page="100" class=""></datasource> 
                                             </div>
 							                <ul class="multi-column-dropdown" crn-datasource="SubCategory">
 							                    <div ng-repeat="subCategory in datasource.data">
@@ -159,7 +159,7 @@
     	</div>
     </div>
     <div class="subscribe">
-    	<div class="container">
+    	<!--div class="container">
     	    <div class="subscribe1">
     		    <h4 class="">{{'Home.view.AssineNossaNewsletter' | translate}}</h4>
     	    </div>
@@ -170,7 +170,7 @@
     		    </form>
     	    </div>
     	    <div class="clearfix"></div>
-        </div>
+        </div-->
     </div>
     <script type="application/x-javascript">
     	addEventListener("load", function() {
@@ -196,6 +196,7 @@
 			<h4>{{'Home.view.Empresa' | translate}}</h4>
 			<ul>
 				<li><a href="#/commerce/products">{{'Home.view.Produtos' | translate}}</a></li>
+				<li><a href="#/admin">{{'Home.view.Administracao' | translate}}</a></li>
 				<li><a>{{'Home.view.TrabalheConosco' | translate}}</a></li>
 				<li><a>{{'Home.view.NossoTime' | translate}}</a></li>
 			</ul>
