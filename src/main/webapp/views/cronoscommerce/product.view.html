@@ -2,7 +2,7 @@
   <div class="single"> 
     <div class="container"> 
       <div class="component-holder ng-binding ng-scope" data-component="crn-datasource" id="crn-datasource-498586">
-        <datasource name="ProductDetail" entity="api/rest/cronoscommerce/Product" keys="id" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" filter="/{{params.id}}"></datasource>
+        <datasource name="ProductDetail" entity="api/rest/cronoscommerce/Product/{{params.id}}" keys="id" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" filter=""></datasource>
       </div>
       <div class="single-grids"> 
         <div class="col-md-4 single-grid1"> 
@@ -33,10 +33,10 @@
           <p class="qty"> {{'Product.view.Quantidade' | translate}}: </p>
           <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small"> 
           <div class="btn_form"> 
-            <a href="#" class="add-cart item_add">{{'Product.view.AdicionarAoCarrinhoDeCompras' | translate}}</a> 
+            <input type="button" ng-click="addCart(ProductDetail.active)" class="add-cart item_add" value="{{'Product.view.AdicionarAoCarrinhoDeCompras' | translate}}">
           </div> 
           <div class="tag"> 
-            <p class="">{{'Product.view.Categoria' | translate}}: <a href="#/commerce/products?id={{ProductDetail.active.sub_category.id}}" class="">{{ProductDetail.active.sub_category.name}}</a></p> 
+            <p class="">{Categoria}: <a href="#/commerce/products?id={{ProductDetail.active.sub_category.id}}" class="">{{ProductDetail.active.sub_category.name}}</a></p> 
           </div> 
         </div> 
         <div class="clearfix"> 
@@ -66,7 +66,7 @@
       
       <div class="product-model-sec single-product-grids" crn-datasource="Product"> 
         <div class="product-grid single-product" ng-repeat="product in datasource.data"> 
-          <a href="#/commerce/product?id={{product.id}}"> 
+          <a href="#/commerce/product?id={{product.id}}" ng-click="params.id=product.id"> 
             <div class="more-product">
               <span> </span>
             </div> 

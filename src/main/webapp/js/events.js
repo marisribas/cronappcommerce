@@ -8,5 +8,6 @@ app.userEvents.newclientDatasourceOnAfterFill = function(event) {
 }
 
 app.userEvents.newclientDatasourceOnAfterCreate = function(event) {
+  console.log('cliente cadastrado com sucesso');
 	return true;
 }

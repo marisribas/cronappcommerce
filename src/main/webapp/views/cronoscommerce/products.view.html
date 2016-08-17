@@ -4,7 +4,7 @@
 	        <h2>{{'Products.view.NossosProdutos' | translate}}</h2>	
 		    <div style="float: right; width: 83%">
     		    <div class="col-md-9 product-model-sec" ng-repeat="product in products">
-    			    <a href="#/commerce/product?id={{product.id}}">
+    			    <a href="#/commerce/product?id={{product.id}}" ng-click="params.id=product.id">
     			        <div class="product-grid">
     		                <div class="more-product"><span></span></div>						
     			            <div class="product-img b-link-stripe b-animate-go  thickbox">
