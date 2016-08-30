@@ -1,15 +1,14 @@
 package cronoscommerce.business;
 
-import org.springframework.stereotype.*;
-import org.springframework.transaction.annotation.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.data.domain.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 
 import cronoscommerce.dao.*;
 import cronoscommerce.entity.*;
-import java.util.*;
-
 
 
 /**

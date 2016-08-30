@@ -8,7 +8,6 @@ import org.springframework.hateoas.PagedResources;
 
 import org.springframework.http.*;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -19,7 +18,7 @@ import cronoscommerce.business.*;
 /**
  * Controller para expor serviços REST de Product
  * 
- * @author Usuário de Teste
+ * @author Usu�rio de Teste
  * @version 1.0
  * @generated
  **/
@@ -118,6 +117,8 @@ public class ProductREST {
   public  HttpEntity<PagedResources<Product>> listByIdParams (@PathVariable("id") java.lang.String id, Pageable pageable, PagedResourcesAssembler assembler){
       return new ResponseEntity<>(assembler.toResource(productBusiness.listById(id, pageable   )), HttpStatus.OK);    
   }
+
+
 
     /**
      * Serviço exposto para recuperar a entidade de acordo com o id fornecido

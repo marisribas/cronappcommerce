@@ -8,7 +8,6 @@ import org.springframework.hateoas.PagedResources;
 
 import org.springframework.http.*;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -19,7 +18,7 @@ import security.business.*;
 /**
  * Controller para expor serviços REST de Role
  * 
- * @author Usuário de Teste
+ * @author Usu�rio de Teste
  * @version 1.0
  * @generated
  **/
@@ -36,24 +35,24 @@ public class RoleREST {
     @Qualifier("RoleBusiness")
     private RoleBusiness roleBusiness;
 
-  /**
-   * @generated
-   */
-    @Autowired
-    @Qualifier("UserBusiness")
-    private UserBusiness userBusiness;
-  /**
-   * @generated
-   */
-    @Autowired
-    @Qualifier("UserRoleBusiness")
-    private UserRoleBusiness userRoleBusiness;
-  /**
-   * @generated
-   */
-    @Autowired
-    @Qualifier("PermissionBusiness")
-    private PermissionBusiness permissionBusiness;
+    /**
+     * @generated
+     */
+      @Autowired
+      @Qualifier("UserBusiness")
+      private UserBusiness userBusiness;
+    /**
+     * @generated
+     */
+      @Autowired
+      @Qualifier("UserRoleBusiness")
+      private UserRoleBusiness userRoleBusiness;
+    /**
+     * @generated
+     */
+      @Autowired
+      @Qualifier("PermissionBusiness")
+      private PermissionBusiness permissionBusiness;
 
     /**
      * Serviço exposto para novo registro de acordo com a entidade fornecida

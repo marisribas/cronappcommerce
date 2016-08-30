@@ -49,7 +49,8 @@
   "value": "70,00",
   "amount": "5",
   "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4614",
-  "image":"views/cronoscommerce/images/bermuda_vermelha.jpg"
+  "image":"views/cronoscommerce/images/bermuda_vermelha.jpg",
+  "deliveryFee": "15,00"
  },
  {
   "_class": "cronoscommerce.entity.Product",
@@ -59,7 +60,8 @@
   "value": "70,00",
   "amount": "10",
   "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4614",
-  "image":"views/cronoscommerce/images/bermuda_azul.jpg"
+  "image":"views/cronoscommerce/images/bermuda_azul.jpg",
+  "deliveryFee": "5,00"
  },
  {
   "_class": "cronoscommerce.entity.Product",
@@ -69,7 +71,8 @@
   "value": "70,00",
   "amount": "30",
   "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4615",
-  "image":"views/cronoscommerce/images/bermuda_rosa.jpg"
+  "image":"views/cronoscommerce/images/bermuda_rosa.jpg",
+  "deliveryFee": "10,00"
  },
  {
   "_class": "cronoscommerce.entity.Product",
@@ -79,7 +82,8 @@
   "value": "50,00",
   "amount": "30",
   "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4615",
-  "image":"views/cronoscommerce/images/saia_amarela.jpg"
+  "image":"views/cronoscommerce/images/saia_amarela.jpg",
+  "deliveryFee": "3,00"
  },
  {
   "_class": "cronoscommerce.entity.Product",
@@ -88,8 +92,9 @@
   "description": "Roupinha do Flamengo",
   "value": "20,00",
   "amount": "20",
-  "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4616",
-  "image":"views/cronoscommerce/images/roupinha_flamengo.jpg"
+  "fk_sub_category":"304BF43E-0E62-4F4A-8A63-3F22D7AD4616",
+  "image":"views/cronoscommerce/images/roupinha_flamengo.jpg",
+  "deliveryFee":"8,00"
  },
  {
   "_class": "cronoscommerce.entity.Product",
@@ -99,6 +104,7 @@
   "value": "30,00",
   "amount": "50",
   "fk_sub_category": "304BF43E-0E62-4F4A-8A63-3F22D7AD4616",
-  "image":"views/cronoscommerce/images/roupinha_mario.png"
+  "image":"views/cronoscommerce/images/roupinha_mario.png",
+  "deliveryFee": "2,00"
  }
 ]

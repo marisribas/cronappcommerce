@@ -4,7 +4,7 @@ import java.io.*;
 import javax.persistence.*;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * Classe que representa a tabela PRODUCT
@@ -72,8 +72,8 @@ public class Product implements Serializable {
 	/**
 	 * @generated
 	 */
-	@Column(name = "deliveryfee", nullable = false, unique = false, insertable=true, updatable=true)
-	private java.lang.String deliveryFee;
+	@Column(name = "deliveryFee", nullable = true, unique = false, insertable=true, updatable=true)
+	private java.lang.String deliveryfee;
 	
 	
 	/**
@@ -225,22 +225,22 @@ public class Product implements Serializable {
 	}
 	
 	/**
-	 * Obtém deliveryFee
-	 * @param deliveryFee deliveryFee
-	 * return deliveryFee
+	 * Obtém deliveryfee
+	 * @param deliveryfee deliveryfee
+	 * return deliveryfee
 	 * @generated
 	 */
-	public java.lang.String getDeliveryFee(){
-		return this.deliveryFee;
+	public java.lang.String getDeliveryfee(){
+		return this.deliveryfee;
 	}
 	
 	/**
-	 * Define deliveryFee
-	 * @param deliveryFee deliveryFee
+	 * Define deliveryfee
+	 * @param deliveryfee deliveryfee
 	 * @generated
 	 */
-	public Product setDeliveryFee(java.lang.String deliveryFee){
-		this.deliveryFee = deliveryFee;
+	public Product setDeliveryfee(java.lang.String deliveryfee){
+		this.deliveryfee = deliveryfee;
 		return this;
 	}
 	

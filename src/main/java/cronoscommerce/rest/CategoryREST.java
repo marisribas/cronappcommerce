@@ -8,7 +8,6 @@ import org.springframework.hateoas.PagedResources;
 
 import org.springframework.http.*;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -19,7 +18,7 @@ import cronoscommerce.business.*;
 /**
  * Controller para expor serviços REST de Category
  * 
- * @author Usuário de Teste
+ * @author Usu�rio de Teste
  * @version 1.0
  * @generated
  **/
@@ -36,12 +35,12 @@ public class CategoryREST {
     @Qualifier("CategoryBusiness")
     private CategoryBusiness categoryBusiness;
 
-  /**
-   * @generated
-   */
-    @Autowired
-    @Qualifier("SubCategoryBusiness")
-    private SubCategoryBusiness subCategoryBusiness;
+    /**
+     * @generated
+     */
+      @Autowired
+      @Qualifier("SubCategoryBusiness")
+      private SubCategoryBusiness subCategoryBusiness;
 
     /**
      * Serviço exposto para novo registro de acordo com a entidade fornecida

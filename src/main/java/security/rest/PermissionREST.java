@@ -8,7 +8,6 @@ import org.springframework.hateoas.PagedResources;
 
 import org.springframework.http.*;
 import org.springframework.beans.factory.annotation.*;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -19,7 +18,7 @@ import security.business.*;
 /**
  * Controller para expor serviços REST de Permission
  * 
- * @author Usuário de Teste
+ * @author Usu�rio de Teste
  * @version 1.0
  * @generated
  **/
