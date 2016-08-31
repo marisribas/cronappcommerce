@@ -1,0 +1,91 @@
+<div class="content"> 
+  <div class="single"> 
+    <div class="container"> 
+      <div class="component-holder ng-binding ng-scope" data-component="crn-datasource" id="crn-datasource-498586">
+        <datasource name="ProductDetail" entity="api/rest/cronappcommerce/Product/{{params.id}}" keys="id" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" filter=""></datasource>
+      </div>
+      <div class="single-grids"> 
+        <div class="col-md-4 single-grid1"> 
+          <h2>{{'Product.view.AcesseSuaConta' | translate}}</h2> 
+          <ul> 
+            <li><a href="#/commerce/login">login</a></li> 
+            <li><a href="#/newRegister">{{'Product.view.NovoCadastro' | translate}}</a></li> 
+          </ul> 
+        </div> 
+        <div class="col-md-4 single-grid"> 
+            <img ng-src="{{ProductDetail.active.image}}" data-imagezoom="true" class="img-responsive"> 
+        </div> 
+        <div class="col-md-4 single-grid simpleCart_shelfItem"> 
+          <h3 class="">{{ProductDetail.active.name}}</h3> 
+          <div class="galry"> 
+            <div class="prices"> 
+              <h5 class="item_price">R$ {{ProductDetail.active.value}}</h5> 
+            </div> 
+            <div class="rating"> 
+              <span>☆</span> 
+              <span>☆</span> 
+              <span>☆</span> 
+              <span>☆</span> 
+              <span>☆</span> 
+            </div> 
+            <div class="clearfix"></div> 
+          </div> 
+          <p class="qty"> {{'Product.view.Quantidade' | translate}}: </p>
+          <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small"> 
+          <div class="btn_form"> 
+            <input type="button" ng-click="addCart(ProductDetail.active)" class="add-cart item_add" value="{{'Product.view.AdicionarAoCarrinhoDeCompras' | translate}}">
+          </div> 
+          <div class="tag"> 
+            <p class="">{Categoria}: <a href="#/commerce/products?id={{ProductDetail.active.sub_category.id}}" class="">{{ProductDetail.active.sub_category.name}}</a></p> 
+          </div> 
+        </div> 
+        <div class="clearfix"> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+  <div class="collpse"> 
+    <div class="container"> 
+      <div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true"> 
+        <div class="panel panel-default"> 
+          <div class="panel-heading" role="tab" id="headingOne"> 
+            <h4 class="panel-title"> {{'Product.view.Descricao' | translate}} </h4> 
+          </div> 
+          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+			  <div class="panel-body">
+				<p class="">{{ProductDetail.active.description}}</p> 
+			  </div>
+			</div>
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+  <div class="related-products"> 
+    <div class="container"> 
+      <h3>{{'Product.view.ProdutosRelacionados' | translate}}</h3> 
+      
+      <div class="product-model-sec single-product-grids" crn-datasource="Product"> 
+        <div class="product-grid single-product" ng-repeat="product in datasource.data"> 
+          <a href="#/commerce/product?id={{product.id}}" ng-click="params.id=product.id"> 
+            <div class="more-product">
+              <span> </span>
+            </div> 
+            <div class="product-img b-link-stripe b-animate-go  thickbox"> 
+              <img ng-src="{{product.image}}" class="img-responsive" alt=""> 
+              <div class="b-wrapper"> 
+                <h4 class="b-animate b-from-left  b-delay03"> <button class="glyphicon glyphicon-eye-open"></button> </h4> 
+              </div> 
+            </div> </a> 
+          <div class="product-info simpleCart_shelfItem"> 
+            <div class="product-info-cust prt_name"> 
+              <h4 class="">{{OtherProducts.active.name}}</h4> 
+              <span class="item_price">{{OtherProducts.active.value}}</span> 
+              <div class="clearfix"> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>

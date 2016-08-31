@@ -1,0 +1,59 @@
+<div class="content">
+    <div class="product-model">	 
+	    <div class="container">
+	        <h2>{{'Products.view.NossosProdutos' | translate}}</h2>	
+		    <div style="float: right; width: 83%">
+    		    <div class="col-md-9 product-model-sec" ng-repeat="product in products">
+    			    <a href="#/commerce/product?id={{product.id}}" ng-click="params.id=product.id">
+    			        <div class="product-grid">
+    		                <div class="more-product"><span></span></div>						
+    			            <div class="product-img b-link-stripe b-animate-go  thickbox">
+    				            <img ng-src="{{product.image}}" class="img-responsive" alt="">
+    						    <div class="b-wrapper">
+        						    <h4 class="b-animate b-from-left  b-delay03">							
+    		    				        <button class="glyphicon glyphicon-eye-open"></button>
+        	    			        </h4>
+    			    			</div>
+    				    	</div>
+    			    	</div>
+    				</a>					
+    				<div class="product-info simpleCart_shelfItem">
+    				    <div class="product-info-cust prt_name">
+    		    			<h4>{{product.name}}</h4>								
+        					<span class="item_price">R$ {{product.value}}</span>
+    						<input type="text" class="item_quantity" value="1" />
+    						<input type="button" ng-click="addCart(product)" title="{{'Products.view.AdicionarAoCarrinhoDeCompras' | translate}}" class="item_add items" value="+">
+    						<div class="clearfix"> </div>
+    					</div>												
+        			</div>
+    		    </div>
+		    </div>
+        
+    		<div class="rsidebar span_1_of_left">
+                <section  class="sky-form">
+                    <div class="product_right" crn-datasource="Category">
+                        <h4 class="m_2">
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true" style="padding-bottom: 6%;"></span>
+                            {{'Products.view.Categorias' | translate}}
+                        </h4>
+                	    <div class={{category.name}} ng-repeat="category in datasource.data">
+                		    <ul class="place">								
+                			    <li class="sort">{{category.name}}</li>
+                			    <li class="by"><img src="views/cronoscommerce/images/do.png" alt=""></li>
+                				<div class="clearfix"> </div>
+                		    </ul>
+                		    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763287">
+                                <datasource filter="{{query == '' || query == null ? null : ('/list/' + query)}}" name="SubCategory" entity="api/rest/cronoscommerce/SubCategory/listByCategory/{{category.id}}" keys="id" rows-per-page="100" class=""></datasource> 
+                            </div>
+                		    <div class="single-bottom" crn-datasource="SubCategory">	
+                		        <div ng-repeat="subCategory in datasource.data">
+                				    <a href="#/commerce/products?id={{subCategory.id}}"><p>{{subCategory.name}}</p></a>
+                		        </div>
+                	        </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

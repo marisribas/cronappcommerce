@@ -1,0 +1,232 @@
+<div class="header">
+	<div class="header-top">
+		<div class="container">
+			<div class="top-right">
+				<ul>
+					<li class="text"><a href="#/commerce/login">login</a></li>
+					<li>
+						<div class="cart box_1">
+							<a href="#/commerce/shoppingcart">
+								 <span class="simpleCart_total"> R$ {{price}} </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> {{shoppingcart.length}} </span>)
+							</a>
+							<p ng-show="shoppingcart.length == 0">
+							    <a href="javascript:;" class="simpleCart_empty">{{'Home.view.Vazio' | translate}}</a>
+						    </p>
+							<div class="clearfix"> </div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="header-bottom">
+		<div class="container">
+			<div class="content white">
+				<nav class="navbar navbar-default" role="navigation">
+    				<div class="navbar-brand">
+    		        	<a href="/">
+    		        		<img src="views/cronappcommerce/images/logo.png" style="width: 200px; margin: -20px 0;" />
+    		        	</a>
+    	        	</div>
+				    <div class="navbar-header">
+				        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+				        </button>
+				    </div>
+				    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+                       <datasource name="Category" entity="api/rest/cronappcommerce/Category" keys="id" rows-per-page="100" class=""></datasource> 
+                    </div> 
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				        <ul class="nav navbar-nav" crn-datasource="Category">
+						    <li><a href="/">Home</a></li>
+					        <li class="dropdown" ng-repeat="category in datasource.data">    
+				                <a class="dropdown-toggle" data-toggle="dropdown">{{category.name}}<b class="caret"></b></a>
+				                <ul class="dropdown-menu multi-column columns-3" >
+					                <div class="row">
+						                <div class="col-sm-4">
+						                    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763287">
+                                                <datasource name="SubCategory" entity="api/rest/cronappcommerce/SubCategory/listByCategory/{{category.id}}" keys="id" rows-per-page="100" class=""></datasource> 
+                                            </div>
+							                <ul class="multi-column-dropdown" crn-datasource="SubCategory">
+							                    <div ng-repeat="subCategory in datasource.data">
+									                <li><a href="#/commerce/products?id={{subCategory.id}}" class="list">{{subCategory.name}}</a></li>
+                                                </div>
+							                </ul>
+						                </div>
+					                </div>
+				                </ul>
+				            </li>
+                        </ul>
+	                </div>
+	            </nav>
+            </div>
+            <div class="search-box">
+	            <div id="sb-search" class="sb-search">
+    		        <form>
+    			        <input class="sb-search-input" placeholder="o que você precisa?" type="search" name="search" id="search">
+    			        <input class="sb-search-submit" type="submit" value="">
+    			        <span class="sb-icon-search"> </span>
+    		        </form>
+	            </div>
+            </div>
+            <script src="views/cronappcommerce/js/classie.js"></script>
+            <script src="views/cronappcommerce/js/uisearch.js"></script>
+            <script>
+    	        new UISearch( document.getElementById( 'sb-search' ) );
+            </script>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div ui-view="" class="container-fluid main-view" style="margin-top: 3%;"> 
+    <div class="banner-section">
+    	<div class="container">
+    		<div class="banner-grids">
+    			<div class="col-md-6 banner-grid">
+    				<h2>{{'Home.view.UltimasColecoes' | translate}}</h2>
+    				<p>{{'Home.view.ConfiraAsNossasPromocoesExclusivasAquiNoNossoCronoscommerce' | translate}}</p>
+    				<a href="#/commerce/products" class="button"> {{'Home.view.ComprarAgora' | translate}} </a>
+    			</div>
+    			<div class="col-md-6 banner-grid1">
+    				<img src="views/cronappcommerce/images/p2.png" class="img-responsive" alt=""/>
+    			</div>
+    			<div class="clearfix"></div>
+    		</div>
+    	</div>
+    </div>
+    <div class="banner-bottom">
+        <div class="gallery-cursual">
+    		<script src="views/cronappcommerce/js/owl.carousel.js"></script>
+    		<script>
+    			$(document).ready(function() {
+    				$("#owl-demo").owlCarousel({
+    					items : 3,
+    					lazyLoad : true,
+    					autoPlay : true,
+    					pagination : false,
+    				});
+    			});
+    		</script>
+    	    <div crn-datasource="Category">
+    	        <div id="owl-demo" class="owl-carousel text-center">
+                    <div class="item">
+        				<img class="lazyOwl" ng-src="{{category.image}}">
+        				<div class="item-info">
+        					<h5>{{category.description}}</h5>
+        				</div>
+        			</div>
+    		    </div>
+    	    </div>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+           <datasource filter="{{query == '' || query == null ? null : ('/listByName/' + query)}}" name="Product" entity="api/rest/cronappcommerce/Product" keys="id" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+        </div>
+    	<div class="container" crn-datasource="Product">
+    		<h3>{{'Home.view.Produtos' | translate}}</h3>
+    		<div class="gallery-grids" ng-repeat="product in datasource.data">
+    			<div class="col-md-3 gallery-grid">
+        			<a href="#/commerce/product?id={{product.id}}"><img ng-src="{{product.image}}" class="img-responsive" alt="{{product.name}}">
+        				<div class="gallery-info">
+            				<div class="quick">
+        	    				<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>{{'Home.view.Ver' | translate}}</p>
+        					</div>
+        				</div>
+    			    </a>
+    				<div class="galy-info">
+    		    		<p class="">{{product.name}}</p>
+    					<div class="galry">
+    	    				<div class="prices">
+    		    				<h5 class="item_price">{{product.value}}</h5>
+    						</div>
+    			    		<div class="rating">
+    	    					<span>☆</span>
+    							<span>☆</span>
+    							<span>☆</span>
+    							<span>☆</span>
+    							<span>☆</span>
+    						</div>
+    	    				<div class="clearfix"></div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="subscribe">
+    	<!--div class="container">
+    	    <div class="subscribe1">
+    		    <h4 class="">{{'Home.view.AssineNossaNewsletter' | translate}}</h4>
+    	    </div>
+    		<div class="subscribe2">
+    		    <form>
+    			    <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+    			    <input type="submit" value="Assinar" class="">
+    		    </form>
+    	    </div>
+    	    <div class="clearfix"></div>
+        </div-->
+    </div>
+    <script type="application/x-javascript">
+    	addEventListener("load", function() {
+    		setTimeout(hideURLbar, 0);
+    		}, false
+    	);
+    	function hideURLbar(){
+    		window.scrollTo(0,1);
+    	}
+    
+    	$(window).load(function() {
+    	  $('.flexslider').flexslider({
+    	    animation: "slide",
+    	    controlNav: "thumbnails"
+    	  });
+    	});
+    	</script>
+</div> 
+<div class="footer-section">
+	<div class="container">
+		<div class="footer-grids">
+			<div class="col-md-2 footer-grid">
+			<h4>{{'Home.view.Empresa' | translate}}</h4>
+			<ul>
+				<li><a href="#/commerce/products">{{'Home.view.Produtos' | translate}}</a></li>
+				<li><a href="#/admin">{{'Home.view.Administracao' | translate}}</a></li>
+				<li><a>{{'Home.view.TrabalheConosco' | translate}}</a></li>
+				<li><a>{{'Home.view.NossoTime' | translate}}</a></li>
+			</ul>
+		</div>
+			<div class="col-md-2 footer-grid">
+			<h4>{{'Home.view.Servicos' | translate}}</h4>
+			<ul>
+				<li><a>{{'Home.view.Suporte' | translate}}</a></li>
+				<li><a>{{'Home.view.Sac' | translate}}</a></li>
+				<li><a>{{'Home.view.Contato' | translate}}</a></li>
+			</ul>
+			</div>
+			<div class="col-md-2 footer-grid">
+			<h4>{{'Home.view.Politicas' | translate}}</h4>
+			<ul>
+				<li><a>{{'Home.view.Privacidade' | translate}}</a></li>
+				<li><a>{{'Home.view.TermosECondicoes' | translate}}</a></li>
+			</ul>
+			</div>
+			<div class="col-md-4 footer-grid1">
+			<div class="social-icons">
+				<a><i class="icon"></i></a>
+				<a><i class="icon1"></i></a>
+				<a><i class="icon2"></i></a>
+				<a><i class="icon3"></i></a>
+				<a><i class="icon4"></i></a>
+			</div>
+			<p>Copyright &copy; 2016</p>
+			</div>
+		<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

@@ -9,7 +9,7 @@
         <class>security.entity.UserRole</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/2131213122;DATABASE_TO_UPPER=false;ALIAS_COLUMN_NAME=true"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/CronosCommerce;DATABASE_TO_UPPER=false;ALIAS_COLUMN_NAME=true"/>
             <property name="javax.persistence.jdbc.user" value="cronapp"/>
             <property name="javax.persistence.jdbc.password" value="cronapp"/>
             <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
@@ -23,7 +23,7 @@
         <class>cronoscommerce.entity.Product</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/2131213122;DATABASE_TO_UPPER=false;ALIAS_COLUMN_NAME=true"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/CronosCommerce;DATABASE_TO_UPPER=false;ALIAS_COLUMN_NAME=true"/>
             <property name="javax.persistence.jdbc.user" value="cronapp"/>
             <property name="javax.persistence.jdbc.password" value="cronapp"/>
             <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>

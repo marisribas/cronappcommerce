@@ -1,0 +1,57 @@
+<div class="content">
+    <div class="main-1">
+		<div class="container">
+            <div class="login-page">
+		        <div class="account_grid">
+		            <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+                        <datasource filter="{{query == '' || query == null ? null : ('/findByLogin/' + query)}}" name="User" entity="api/rest/security/User" keys="id" rows-per-page="100" delete-message="Deseja remover?" class="" on-after-fill="app.userEvents.newclientDatasourceOnAfterFill(event)" on-after-create="app.userEvents.newclientDatasourceOnAfterCreate(event)"></datasource> 
+                    </div> 
+			        <div class="col-md-6 login-left" ng-show="!logged">
+			  	        <h3>{{'Login.view.NovoCadastro' | translate}}</h3>
+			  	        <br>
+			  	        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-User"> 
+                            <div class="form"> 
+                                <form crn-datasource="User"> 
+                                    <fieldset> 
+                                        <div class=""></div> 
+                                        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-email"> 
+                                            <div class="form-group"> 
+                                                <label for="textinput-email" class="">Email</label>
+                                                <input type="text" ng-model="User.active.email" class="form-control" id="textinput-email" placeholder="email"> 
+                                            </div> 
+                                        </div> 
+                                        <div class=""></div> 
+                                        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-name"> 
+                                            <div class="form-group"> 
+                                                <label for="textinput-name" class="">{{'NewClient.view.Name' | translate}}</label> 
+                                                <input type="text" ng-model="User.active.name" class="form-control" id="textinput-name" placeholder="name" required="required"> 
+                                            </div> 
+                                        </div> 
+                                        <div class=""></div> 
+                                        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-login"> 
+                                            <div class="form-group"> 
+                                                <label for="textinput-login" class="">Login</label> 
+                                                <input type="text" ng-model="User.active.login" class="form-control" id="textinput-login" placeholder="login" required="required"> 
+                                            </div> 
+                                        </div> 
+                                        <div class=""></div> 
+                                        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-password"> 
+                                            <div class="form-group"> 
+                                                <label for="textinput-password" class="">{{'NewClient.view.Password' | translate}}</label> 
+                                                <input type="password" ng-model="User.active.password" class="form-control" id="textinput-password" placeholder="password" required="required"> 
+                                            </div> 
+                                        </div> 
+                                        <div class=""></div> 
+                                        <br>
+                                        <a class="acount-btn" ng-click="datasource.post()">{{'NewClient.view.Cadastrar' | translate}}</a>
+                                    </fieldset> 
+                                </form> 
+                            </div> 
+                        </div> 
+		            </div>
+	                <div class="clearfix"> </div>
+	            </div>
+            </div>
+        </div>
+    </div>
+</div>

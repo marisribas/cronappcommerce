@@ -1,0 +1,42 @@
+<div class="content">
+    <div class="cart-items">
+        <div style="float:right;" ng-show="products.length != 0">
+            <a class="acount-btn" href="#/commerce/shoppingcart" ng-click="emptyShoppingCart();" style="margin-right: 99px;">
+                Esvaziar Carrinho!
+            </a>
+        </div>
+	    <div class="container">
+			<h2>Minhas Compras</h2>
+			<div ng-show="products.length == 0"> {{'Shoppingcart.view.OCarrinhoEstaVazio' | translate}} </div>
+            <div ng-show="products.length != 0" class="cart-header-{{product.id}}" ng-repeat="product in products track by $index">
+                <div class="close-{{product.id}}"> </div>
+			    <div class="cart-sec simpleCart_shelfItem">
+			        
+    				<div class="cart-item cyc">
+    					 <img ng-src="{{product.image}}" class="img-responsive" alt="">
+    				</div>
+				    <div class="cart-item-info">
+				        <h3>
+				            <a href="#/commerce/product?id={{product.id}}">{{product.description}}</a>
+				        </h3>
+						<div class="delivery">
+						    <p>
+						        {{'Shoppingcart.view.TaxaDeEntrega' | translate}}: R$ {{product.deliveryFee}}<br />
+						       <span>{{'Shoppingcart.view.PrazoDeEntrega' | translate}} {{'Shoppingcart.view.Dias' | translate}}</span>
+					        </p>
+						    <div class="clearfix"></div>
+		                </div>	
+				    </div>
+				    <div class="clearfix"></div>
+		        </div>
+		    </div>
+		    
+		    <div ng-show="products.length != 0" id="" style="float: right;">
+		        Valor Total: R$ {{price}}
+		        <br /><br />
+		        <a ng-show="!clientLogged" href="#/commerce/login"  class="acount-btn">Comprar</a>
+		        <a ng-show="clientLogged" href="#/commerce/login"  class="acount-btn">Confirmar Compra</a>
+	        </div>
+        </div>
+	 </div>
+ </div>
